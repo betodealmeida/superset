@@ -37,8 +37,8 @@ class ExportDatabasesCommand(BaseCommand):
 
     @staticmethod
     def export_database(database: Database) -> Iterator[Tuple[str, str]]:
-        name = sanitize(database.database_name)
-        file_name = f"databases/{name}.yaml"
+        database_slug = sanitize(database.database_name)
+        file_name = f"databases/{database_slug}.yaml"
 
         payload = database.export_to_dict(
             recursive=False,
@@ -59,11 +59,9 @@ class ExportDatabasesCommand(BaseCommand):
         file_content = yaml.safe_dump(payload, sort_keys=False)
         yield file_name, file_content
 
-        # TODO (betodealmeida): reuse logic from ExportDatasetCommand once
-        # it's implemented
         for dataset in database.tables:
-            name = sanitize(dataset.table_name)
-            file_name = f"datasets/{name}.yaml"
+            dataset_slug = sanitize(dataset.table_name)
+            file_name = f"datasets/{database_slug}/{dataset_slug}.yaml"
 
             payload = dataset.export_to_dict(
                 recursive=True,
