@@ -341,7 +341,7 @@ class TestImportDatasetsCommand(SupersetTestCase):
             "databases/imported_database.yaml": yaml.safe_dump(database_config),
             "datasets/imported_dataset.yaml": yaml.safe_dump(dataset_config),
         }
-        command = v1.ImportDatasetsCommand(contents)
+        command = v1.ImportDatasetsCommand(contents, overwrite=True)
         command.run()
         command.run()
         dataset = (
@@ -359,7 +359,7 @@ class TestImportDatasetsCommand(SupersetTestCase):
             "databases/imported_database.yaml": yaml.safe_dump(database_config),
             "datasets/imported_dataset.yaml": yaml.safe_dump(new_config),
         }
-        command = v1.ImportDatasetsCommand(contents)
+        command = v1.ImportDatasetsCommand(contents, overwrite=True)
         command.run()
         dataset = (
             db.session.query(SqlaTable).filter_by(uuid=dataset_config["uuid"]).one()
@@ -443,7 +443,7 @@ class TestImportDatasetsCommand(SupersetTestCase):
             "datasets/imported_dataset.yaml": yaml.safe_dump(dataset_config),
             "databases/imported_database.yaml": yaml.safe_dump(database_config),
         }
-        command = v1.ImportDatasetsCommand(contents)
+        command = v1.ImportDatasetsCommand(contents, overwrite=True)
         command.run()
 
         database = (

@@ -850,6 +850,16 @@ class ChartRestApi(BaseSupersetModelRestApi):
                 schema:
                   type: string
                   format: binary
+          parameters:
+          - in: path
+            name: passwords
+            schema:
+              type: string
+          - in: path
+            name: overwrite
+            schema:
+              type: bool
+            default: false
           responses:
             200:
               description: Chart import result
@@ -883,8 +893,11 @@ class ChartRestApi(BaseSupersetModelRestApi):
             if "passwords" in request.form
             else None
         )
+        overwrite = request.form.get("overwrite") == "true"
 
-        command = ImportChartsCommand(contents, passwords=passwords)
+        command = ImportChartsCommand(
+            contents, passwords=passwords, overwrite=overwrite
+        )
         try:
             command.run()
             return self.response(200, message="OK")
