@@ -660,6 +660,9 @@ const DatasetList: FunctionComponent<DatasetListProps> = ({
             'the database configuration are not present in export files, and ' +
             'should be added manually after the import if they are needed.',
         )}
+        confirmOverwriteMessage={t(
+          'One or more datasets to be imported already exist.',
+        )}
         addDangerToast={addDangerToast}
         addSuccessToast={addSuccessToast}
         onModelImport={handleDatasetImport}

@@ -437,6 +437,9 @@ function DatabaseList({ addDangerToast, addSuccessToast }: DatabaseListProps) {
             'sections of the database configuration are not present in export ' +
             'files, and should be added manually after the import if they are needed.',
         )}
+        confirmOverwriteMessage={t(
+          'One or more databases to be imported already exist.',
+        )}
         addDangerToast={addDangerToast}
         addSuccessToast={addSuccessToast}
         onModelImport={handleDatabaseImport}
