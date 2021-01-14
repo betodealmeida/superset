@@ -45,11 +45,11 @@ columns:
   type: STRING
   groupby: true
   filterable: true
-  expression: "CASE \nWHEN Stage_of_Development = 'Pre-clinical' THEN '0. Pre-clinical'\n\
-    WHEN Stage_of_Development = 'Phase I' THEN '1. Phase I' \nWHEN Stage_of_Development\
-    \ = 'Phase I/II' or Stage_of_Development = 'Phase II' THEN '2. Phase II or\
-    \ Combined I/II'\nWHEN Stage_of_Development = 'Phase III' THEN '3. Phase III'\n\
-    WHEN Stage_of_Development = 'Authorized' THEN '4. Authorized'\nEND"
+  expression: "CASE \nWHEN stage_of_development = 'Pre-clinical' THEN '0. Pre-clinical'\n\
+    WHEN stage_of_development = 'Phase I' THEN '1. Phase I' \nWHEN stage_of_development\
+    \ = 'Phase I/II' or stage_of_development = 'Phase II' THEN '2. Phase II or\
+    \ Combined I/II'\nWHEN stage_of_development = 'Phase III' THEN '3. Phase III'\n\
+    WHEN stage_of_development = 'Authorized' THEN '4. Authorized'\nEND"
   description: null
   python_date_format: null
 - column_name: FDA_Approved_Indications
@@ -152,7 +152,7 @@ columns:
   expression: null
   description: null
   python_date_format: null
-- column_name: Stage_of_Development
+- column_name: stage_of_development
   verbose_name: null
   is_dttm: false
   is_active: null
@@ -204,4 +204,4 @@ columns:
   python_date_format: null
 version: 1.0.0
 database_uuid: a2dc77af-e654-49bb-b321-40f6b559a1ee
-data: https://raw.githubusercontent.com/apache-superset/examples-data/master/datasets/examples/covid_vaccines.csv
+data: https://raw.githubusercontent.com/apache-superset/examples-data/fix_covid_data/datasets/examples/covid_vaccines.csv
