@@ -214,7 +214,7 @@
     "@testing-library/react": "^11.2.0",
     "@testing-library/react-hooks": "^5.0.3",
     "@testing-library/user-event": "^12.7.0",
-    "@types/classnames": "^2.2.10",
+    "@types/classnames": "^2.3.1",
     "@types/dom-to-image": "^2.6.0",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
