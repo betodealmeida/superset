@@ -241,7 +241,7 @@
     "@types/redux-mock-store": "^1.0.2",
     "@types/rison": "0.0.6",
     "@types/sinon": "^9.0.5",
-    "@types/yargs": "12 - 15",
+    "@types/yargs": "12 - 18",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
     "babel-eslint": "^10.1.0",
@@ -312,7 +312,7 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-sources": "^1.4.3",
-    "yargs": "^15.4.1"
+    "yargs": "^17.5.1"
   },
   "stylelint": {
     "rules": {
