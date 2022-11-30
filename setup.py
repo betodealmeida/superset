@@ -136,7 +136,7 @@ setup(
         "crate": ["crate[sqlalchemy]>=0.26.0, <0.27"],
         "databricks": [
             "databricks-sql-connector>=2.0.2, <3",
-            "sqlalchemy-databricks>=0.2.0",
+            "sqlalchemy-databricks>=0.4.6",
         ],
         "db2": ["ibm-db-sa>=0.3.5, <0.4"],
         "dremio": ["sqlalchemy-dremio>=1.1.5, <1.3"],
